@@ -6,7 +6,7 @@ import datetime
 
 # Create the main window
 root = Tk()
-
+root.title("My thing")
 # Create a frame widget
 root.geometry("300x200")
 frm = ttk.Frame(root, padding=10)
