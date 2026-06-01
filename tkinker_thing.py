@@ -4,6 +4,8 @@ from tkinter import colorchooser
 import random
 import datetime
 
+
+
 # Create the main window
 root = Tk()
 root.title("My thing")
@@ -16,8 +18,6 @@ label = ttk.Label(root, font=("Arial", 18))
 
 #def commans for buttons
 def change_color():
-    cc = ['red', 'blue']
-    c = random.choice(cc)
     root.configure(background= "#"+("%06x"%random.randint(0,16777215)))
 
 def idk():
@@ -27,12 +27,12 @@ def idk():
 
 def update_clock():
     current_time = datetime.datetime.now().strftime("%H:%M:%S")
-    label.config(text=f"Time: {current_time}")
+    ttk.Label(root, text = str(current_time)).grid(column=0, row=1)
     root.after(1000, update_clock)
 
 # Create a label widget
 ttk.Label(frm, text="Hello World!").grid(column=0, row=0)
-
+ttk.Label()
 # Create a button widget
 
 quit_button = ttk.Button(frm, text="Quit", command=root.destroy).grid(column=1, row=0)
